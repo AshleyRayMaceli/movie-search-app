@@ -13,7 +13,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/titleEntryEditText"
         android:hint="Movie Title"
         android:textSize="30dp"
         android:layout_marginTop="45dp"
