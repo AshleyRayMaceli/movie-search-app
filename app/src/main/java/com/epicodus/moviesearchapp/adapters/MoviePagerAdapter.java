@@ -3,6 +3,7 @@ package com.epicodus.moviesearchapp.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 import com.epicodus.moviesearchapp.models.Movie;
 import com.epicodus.moviesearchapp.ui.MovieDetailFragment;
@@ -29,6 +30,7 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+        Log.d("title in getPageTitle", mMovies.get(position).getTitle());
         return mMovies.get(position).getTitle();
     }
 }

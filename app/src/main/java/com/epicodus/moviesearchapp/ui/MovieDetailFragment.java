@@ -19,7 +19,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MovieDetailFragment extends Fragment {
-
     @Bind(R.id.movieImageView) ImageView mImageLabel;
     @Bind(R.id.movieTitleTextView) TextView mTitleLabel;
     @Bind(R.id.releaseDateTextView) TextView mReleaseDateLabel;
@@ -48,7 +47,9 @@ public class MovieDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movie_detail, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(view.getContext()).load(mMovie.getImage()).into(mImageLabel);
+        Picasso.with(view.getContext())
+                .load(mMovie.getImage())
+                .into(mImageLabel);
 
         mTitleLabel.setText(mMovie.getTitle());
         mReleaseDateLabel.setText(mMovie.getReleaseDate());

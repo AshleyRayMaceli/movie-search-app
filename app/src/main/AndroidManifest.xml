@@ -29,7 +29,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.TitleSearchActivity"></meta-data>
         </activity>
-        <activity android:name=".ui.MovieDetailActivity"></activity>
+        <activity
+            android:name=".ui.MovieDetailActivity"
+            android:theme="@style/NoActionBarTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.TitleResultsActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>

@@ -22,8 +22,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
-    private static final int MAX_WIDTH = 200;
-    private static final int MAX_HEIGHT = 200;
     private ArrayList<Movie> mMovies = new ArrayList<>();
     private Context mContext;
 
@@ -76,8 +74,6 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         public void bindMovie(Movie movie) {
             Picasso.with(mContext)
                     .load(movie.getImage())
-                    .resize(MAX_WIDTH, MAX_HEIGHT)
-                    .centerCrop()
                     .into(mMovieImageView);
             mMovieTitleTextView.setText(movie.getTitle());
             mReleaseDateTextView.setText(movie.getReleaseDate());
