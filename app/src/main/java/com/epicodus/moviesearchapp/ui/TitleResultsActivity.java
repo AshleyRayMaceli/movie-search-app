@@ -3,11 +3,14 @@ package com.epicodus.moviesearchapp.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.epicodus.moviesearchapp.R;
+import com.epicodus.moviesearchapp.adapters.MovieListAdapter;
 import com.epicodus.moviesearchapp.models.Movie;
 import com.epicodus.moviesearchapp.services.MovieService;
 
@@ -23,7 +26,8 @@ import okhttp3.Response;
 public class TitleResultsActivity extends AppCompatActivity {
     public static final String TAG = TitleResultsActivity.class.getSimpleName();
 
-    @Bind(R.id.movieResultsListView) ListView mMovieResultsListView;
+    @Bind(R.id.movieResultsRecyclerView) RecyclerView mMovieResultsRecyclerView;
+    private MovieListAdapter mAdapter;
 
     public ArrayList<Movie> mMovies = new ArrayList<>();
 
@@ -54,14 +58,11 @@ public class TitleResultsActivity extends AppCompatActivity {
                 TitleResultsActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        String[] movieTitles = new String[mMovies.size()];
-                        for (int i = 0; i < movieTitles.length; i++) {
-                            movieTitles[i] = mMovies.get(i).getTitle();
-                        }
-
-                        ArrayAdapter adapter = new ArrayAdapter(TitleResultsActivity.this, android.R.layout.simple_list_item_1, movieTitles);
-                        mMovieResultsListView.setAdapter(adapter);
-
+                        mAdapter = new MovieListAdapter(getApplicationContext(), mMovies);
+                        mMovieResultsRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(TitleResultsActivity.this);
+                        mMovieResultsRecyclerView.setLayoutManager(layoutManager);
+                        mMovieResultsRecyclerView.setHasFixedSize(true);
                     }
                 });
             }
