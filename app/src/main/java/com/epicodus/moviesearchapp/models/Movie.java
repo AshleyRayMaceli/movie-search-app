@@ -6,19 +6,15 @@ public class Movie {
     String mTitle;
     double mRating;
     String mReleaseDate;
-    ArrayList<String> mGenres = new ArrayList<>();
     String mOverview;
-    String mSite;
-    int mRunTime;
+    String mImage;
 
-    public Movie(String title, double rating, String releaseDate, ArrayList<String> genres, String overview, String site, int runTime) {
+    public Movie(String title, double rating, String releaseDate, String overview, String image) {
         this.mTitle = title;
         this.mRating = rating;
         this.mReleaseDate = releaseDate;
-        this.mGenres = genres;
         this.mOverview = overview;
-        this.mSite = site;
-        this.mRunTime = runTime;
+        this.mImage = "http://image.tmdb.org/t/p/w500" + image;
     }
 
     public String getTitle() {
@@ -33,24 +29,11 @@ public class Movie {
         return mReleaseDate;
     }
 
-    public ArrayList<String> getGenres() {
-        return mGenres;
-    }
-
     public String getOverview() {
         return mOverview;
     }
 
-    public String getSite() {
-        return mSite;
-    }
-
-    public int getRunTime() {
-        return mRunTime;
-    }
-
-
-
+    public String getImage() { return mImage; }
 }
 
 

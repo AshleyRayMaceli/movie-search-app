@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.epicodus.moviesearchapp.R;
+import com.epicodus.moviesearchapp.models.Movie;
 import com.epicodus.moviesearchapp.services.MovieService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -17,6 +19,7 @@ import okhttp3.Response;
 
 public class TitleResultsActivity extends AppCompatActivity {
     public static final String TAG = TitleResultsActivity.class.getSimpleName();
+    public ArrayList<Movie> mMovies = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,10 @@ public class TitleResultsActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
+                    if (response.isSuccessful()) {
+                        Log.v(TAG, jsonData);
+                        mMovies = movieService.processResults(response);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
