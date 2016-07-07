@@ -1,13 +1,16 @@
 package com.epicodus.moviesearchapp.models;
 
-import java.util.ArrayList;
+import org.parceler.Parcel;
 
+@Parcel
 public class Movie {
     String mTitle;
     double mRating;
     String mReleaseDate;
     String mOverview;
     String mImage;
+
+    public Movie() {}
 
     public Movie(String title, double rating, String releaseDate, String overview, String image) {
         this.mTitle = title;

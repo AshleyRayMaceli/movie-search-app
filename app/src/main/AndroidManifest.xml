@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity"
-                  android:theme="@style/NoActionBarTheme">
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,16 +22,14 @@
         <activity android:name=".ui.TitleSearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity">
-            </meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
-
         <activity android:name=".ui.TitleResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.TitleSearchActivity">
-            </meta-data>
+                android:value=".ui.TitleSearchActivity"></meta-data>
         </activity>
+        <activity android:name=".ui.MovieDetailActivity"></activity>
     </application>
 
 </manifest>
