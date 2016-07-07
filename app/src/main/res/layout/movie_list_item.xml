@@ -6,7 +6,7 @@
 
     <ImageView
         android:layout_width="130dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:id="@+id/movieImageView"
         android:src="@drawable/background"
         android:scaleType="centerCrop"/>
@@ -25,17 +25,9 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="Movie Name"
-            android:textColor="@color/colorPrimary"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Release Date"
-            android:id="@+id/releaseDateTextView"
-            android:layout_below="@+id/movieTitleTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -46,9 +38,20 @@
                 android:layout_height="wrap_content"
                 android:text="Rating"
                 android:id="@+id/ratingTextView"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Release Date"
+                android:id="@+id/releaseDateTextView"
+                android:textStyle="italic"
+                android:textSize="20dp"
+                android:layout_above="@+id/ratingTextView"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
