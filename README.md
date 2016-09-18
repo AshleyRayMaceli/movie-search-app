@@ -1,3 +1,5 @@
+![Screenshots](movie-search-screenshot.jpg)
+
 # _Movie Search App_
 
 #### By _**Ashley Maceli**_
@@ -9,7 +11,7 @@ _An Android app that utilizes The Movie Database API to search for movie informa
 ## Setup/Installation Requirements
 
 * _Ensure that Android Studio is installed on your machine._
-* _Using the command line, clone the movie-search-android repository to your desktop using the command "git clone https://github.com/AshleyRayMaceli/movie-search-android"_
+* _Using the command line, clone the repository to your desktop using the command "git clone https://github.com/AshleyRayMaceli/movie-search-app"_
 * _The app requires a valid API key from The Movie Database. Create an account, get an API Key. Then create a gradle.properties file at the top of the directory and enter your API Key as MovieConsumerKey = "XXXXXXXXXXXXXXX"_
 * _Open the package using Android Studio, choose your emulator, and run the app._
 
